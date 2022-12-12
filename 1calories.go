@@ -8,6 +8,18 @@ import (
 )
 
 func main() {
+	// This program outputs the largest sum of integer
+	// elements that are separated by an empty line.
+	//
+	// To do so it uses two variables:
+	// - currentSum tracks the sum of the current group of elements
+	// - previousSum tracks the highest sum of elements
+	//
+	// The main loop goes through every line of the file.
+	// - When an empty line is reached, it compares the two sums and updates
+	//   previousSum to the highest value of both, then resets currentSum to 0
+	//   for the next iteration.
+	// - When a number is in the next line, it gets added to currentSum
 
 	f, err := os.Open("calories.txt")
 
