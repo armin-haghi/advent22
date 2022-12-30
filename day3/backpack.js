@@ -2,7 +2,14 @@
 // 2. find length / 2 per line = halflenght
 // 3. split each line at halflenght
 // 4. loop for each letter in str1 and str2 until duplicate is found
-var str = 'vJrwpWtwJgWrhcsFMMfFFhFp';
+// 5. convert to priority a-z 1 to 26 A-Z to 27-52
+const fs = require('fs')
+
+const data = fs.readFileSync('sample.txt', 'UTF-8')
+const lines = data.split(/\r?\n/)
+
+// var str = 'vJrwpWtwJgWrhcsFMMfFFhFp';
+
 function find_duplicate_letter(str) {
     var split_lenght = str.length / 2;
     var str1 = str.substring(0, split_lenght);
@@ -15,4 +22,9 @@ function find_duplicate_letter(str) {
         }
     }
 }
-console.log(find_duplicate_letter(str));
+
+lines.forEach(line => {
+    console.log(find_duplicate_letter(line));
+  })
+
+
