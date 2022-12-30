@@ -8,14 +8,12 @@ const fs = require('fs')
 const data = fs.readFileSync('sample.txt', 'UTF-8')
 const lines = data.split(/\r?\n/)
 
-// var str = 'vJrwpWtwJgWrhcsFMMfFFhFp';
-
 function find_duplicate_letter(str) {
-    var split_lenght = str.length / 2;
-    var str1 = str.substring(0, split_lenght);
-    var str2 = str.substring(split_lenght, split_lenght * 2);
+    let split_lenght = str.length / 2;
+    let str1 = str.substring(0, split_lenght);
+    let str2 = str.substring(split_lenght, split_lenght * 2);
     for (var i = 0; i < split_lenght; i++) {
-        var pos = void 0;
+        let pos = void 0;
         pos = str2.indexOf(str1[i]);
         if (pos > -1) {
             return str2[pos];
@@ -24,6 +22,7 @@ function find_duplicate_letter(str) {
 }
 
 lines.forEach(line => {
+
     console.log(find_duplicate_letter(line));
   })
 
