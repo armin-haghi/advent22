@@ -21,9 +21,25 @@ function find_duplicate_letter(str) {
     }
 }
 
-lines.forEach(line => {
+function convert_letter_to_priority(str) {
+    let prio;
+    let base = str.charCodeAt(0);
+    if (base < 97) {
+        prio = base - 64 + 26;
+    } else {
+        prio = base - 96;
+    }
+    return prio;
+}
 
-    console.log(find_duplicate_letter(line));
+let totalPrio = 0;
+
+lines.forEach(line => {
+    let str = find_duplicate_letter(line);
+    let prio = convert_letter_to_priority(str);
+    console.log(str, prio);
+    totalPrio = totalPrio + prio;
   })
 
+  console.log("Total =", totalPrio);
 
