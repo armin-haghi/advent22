@@ -5,7 +5,7 @@
 // 5. convert to priority a-z 1 to 26 A-Z to 27-52
 const fs = require('fs')
 
-const data = fs.readFileSync('sample.txt', 'UTF-8')
+const data = fs.readFileSync('input.txt', 'UTF-8')
 const lines = data.split(/\r?\n/)
 
 function find_duplicate_letter(str) {
